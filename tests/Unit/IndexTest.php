@@ -3,13 +3,15 @@
 $basePath = "C:\\Users\\braz9\\Desktop\\projects\\laracasts\\booking\\public\\";
 require_once $basePath . "index.php";
 
-use PHPUnit\Framework\TestCase;
+test('Greeting class returns "hola"', function () {
+    // Arrange
+    $greetingInstance = new Greeting();
 
-class GreetingTest extends TestCase {
-    public function testGreeting() {
-        $result = greeting();
-        $this->assertEquals('hola', $result);
-    }
-}
+    // Act
+    $result = $greetingInstance->greeting();
+
+    // Assert/Expect
+    expect($result)->toEqual('hola');
+});
 
 ?>

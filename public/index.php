@@ -1,8 +1,9 @@
 <?php
 
-function greeting() {
-  return "hola";
+class Greeting {
+  function greeting() {
+    return "hola";
+  }
 }
-
 
 ?>

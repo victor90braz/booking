@@ -3,3 +3,6 @@
 
 - github
   https://github.com/victor90braz/booking.git
+
+- run test
+  vendor/bin/pest

@@ -1,16 +1,19 @@
 {
   "name": "braz9/booking",
-  "autoload": {
-    "psr-4": {
-      "Braz9\\Booking\\": "src/"
-    }
-  },
   "authors": [
     {
       "name": "victor braz",
       "email": "victor.90braz@gmail.com"
     }
   ],
+  "require": {
+    "illuminate/collections": "^10.28"
+  },
+  "autoload": {
+    "psr-4": {
+      "Braz9\\Booking\\": "src/"
+    }
+  },
   "require-dev": {
     "pestphp/pest": "^2.21"
   },
