@@ -12,6 +12,6 @@ require_once $basePath . "index.php";
   <title>Booking</title>
 </head>
 <body>
-  <h1>Booking Tittle <?php echo $greeting ?></h1>
+  <h1>Booking Tittle <?= $greeting ?></h1>
 </body>
 </html>
