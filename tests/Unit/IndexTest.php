@@ -1,6 +1,6 @@
 <?php
 
-$basePath = "C:\\Users\\braz9\\Desktop\\projects\\laracasts\\booking\\public\\";
+$basePath = "C:\\Users\\braz9\\Desktop\\projects\\laracasts\\booking\\views\\";
 require_once $basePath . "index.php";
 
 test('Greeting class returns "hola"', function () {

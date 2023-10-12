@@ -1,11 +1,8 @@
 <?php
 
-class Greeting {
-  function greeting() {
-    return "hola";
-  }
-}
+$basePath = "C:\\Users\\braz9\\Desktop\\projects\\laracasts\\booking\\views\\";
 
-echo (new Greeting)->greeting();
+require_once $basePath . "index.view.php";
 
 ?>
+
