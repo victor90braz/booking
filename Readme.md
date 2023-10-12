@@ -19,3 +19,6 @@
 
 - run test
   vendor/bin/pest
+
+- tailwind
+  https://tailwindui.com/components#product-application-ui
