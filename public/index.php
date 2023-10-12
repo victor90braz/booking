@@ -1,5 +1,8 @@
 <?php
 
-  echo "hola";
+function greeting() {
+  return "hola";
+}
+
 
 ?>
