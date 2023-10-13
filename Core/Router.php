@@ -1,5 +1,4 @@
 <?php
-
 class Router {
   private static $BASE_PATH = "C:\\Users\\braz9\\Desktop\\projects\\laracasts\\booking\\";
 
