@@ -5,5 +5,4 @@ $greeting = "Booking Flats";
 
 views("index.view.php");
 
-
 ?>
