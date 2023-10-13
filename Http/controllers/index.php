@@ -1,7 +1,9 @@
 <?php
+require_once '../Core/functions.php';
 
 $greeting = "Booking Flats";
 
-$basePath = "C:\\Users\\braz9\\Desktop\\projects\\laracasts\\booking\\views\\";
-require_once $basePath . "index.view.php";
+views("index.view.php");
+
+
 ?>

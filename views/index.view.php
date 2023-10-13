@@ -6,6 +6,6 @@
   <title>Booking</title>
 </head>
 <body>
-  <h1><?= $greeting ?></h1>
+  <h1><?= "Booking" ?></h1>
 </body>
 </html>
