@@ -24,8 +24,6 @@ try {
   $stmt = $pdo->query('SELECT * FROM notes');
   $notes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-
-  // Route to controller (assuming routeToController is defined in 'functions.php')
   routeToController("index.php");
 
 } catch (PDOException $e) {
