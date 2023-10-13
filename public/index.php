@@ -1,6 +1,6 @@
 <?php
-require_once '../Core/Router.php';
+require_once '../Core/functions.php';
 
-Router::route("Http/controllers/index.php");
+controllers("index.php");
 
 ?>
