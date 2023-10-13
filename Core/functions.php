@@ -2,5 +2,5 @@
 require_once '../Core/Router.php';
 
 function routeToController ($path) {
-  return Router::route("Http/controllers/$path");
+  return Router::basePath("Http/controllers/$path");
 }
