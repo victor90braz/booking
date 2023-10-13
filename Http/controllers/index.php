@@ -11,17 +11,16 @@ $dataBase = [
 ];
 
 try {
-  // Create a PDO instance
+
   $pdo = new PDO(
     "mysql:host={$dataBase['host']};port={$dataBase['port']};dbname={$dataBase['dbname']};charset={$dataBase['charset']}",
-    'root', // Replace with your database username
-    ''  // Replace with your database password
+    'root',
+    ''
   );
 
-  // Set PDO to throw exceptions on error
+
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  // Fetch all notes from the database
   $stmt = $pdo->query('SELECT * FROM notes');
   $notes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
