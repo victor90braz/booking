@@ -1,8 +1,6 @@
 <?php
+require_once '../Core/Router.php';
 
-$basePath = "C:\\Users\\braz9\\Desktop\\projects\\laracasts\\booking\\Http\\controllers\\";
-
-require_once $basePath . "index.php";
-
+$route = new Router();
+$route->route("index.php");
 ?>
-
