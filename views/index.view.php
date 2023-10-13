@@ -13,5 +13,11 @@ require_once $basePath . "index.php";
 </head>
 <body>
   <h1><?php echo $greeting ?></h1>
+
+  <ul>
+    <?php foreach ($notes as $note) : ?>
+      <li><?php echo $note['body']; ?></li>
+    <?php endforeach; ?>
+  </ul>
 </body>
 </html>
