@@ -1,6 +1,6 @@
 <?php
 require_once '../Core/functions.php';
 
-controllers("index.php");
+routeToController("index.php");
 
 ?>
