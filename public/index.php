@@ -2,6 +2,6 @@
 
 require_once '../Core/functions.php';
 
-routeToController("index.php");
+require_once basePath("Http/controllers/index.php");
 
 ?>

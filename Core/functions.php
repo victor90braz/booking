@@ -1,10 +1,8 @@
 <?php
-require_once '../Core/Router.php';
 
-function routeToController ($path) {
-  return Router::basePath("Http/controllers/$path");
+require_once '../Core/functions.php';
+
+function basePath($path) {
+  return "\\Users\\braz9\\Desktop\\projects\\laracasts\\booking\\$path";
 }
 
-function views ($path) {
-  return Router::basePath("views/$path");
-}
