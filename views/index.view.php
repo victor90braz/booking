@@ -1,9 +1,3 @@
-<?php
-$basePath = "C:\\Users\\braz9\\Desktop\\projects\\laracasts\\booking\\Http\\controllers\\";
-
-require_once $basePath . "index.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,5 +13,6 @@ require_once $basePath . "index.php";
       <li><?php echo $note['body']; ?></li>
     <?php endforeach; ?>
   </ul>
+
 </body>
 </html>
