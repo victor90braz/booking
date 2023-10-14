@@ -2,18 +2,15 @@
 
   class Database {
     private $connection;
+    public $config;
 
-    public function __construct() {
-        $dataBase = [
-            "host" => "localhost",
-            "port" => 3306,
-            "dbname" => "laracast",
-            "charset" => "utf8mb4"
-        ];
+    public function __construct($config) {
+
+      $this->config = $config;
 
         try {
             $this->connection = new PDO(
-                "mysql:host={$dataBase['host']};port={$dataBase['port']};dbname={$dataBase['dbname']};charset={$dataBase['charset']}",
+                "mysql:host={$config['host']};port={$config['port']};dbname={$config['dbname']};charset={$config['charset']}",
                 'root',
                 ''
             );
