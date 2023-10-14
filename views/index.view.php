@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Booking</title>
-</head>
-<body>
+<?php require_once basePath("/views/partials/header.php") ?>
+
   <h1><?php echo $greeting ?></h1>
 
   <ul>
@@ -14,5 +8,4 @@
     <?php endforeach; ?>
   </ul>
 
-</body>
-</html>
+<?php require_once basePath("/views/partials/footer.php") ?>
