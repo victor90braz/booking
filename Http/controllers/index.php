@@ -1,4 +1,7 @@
 <?php
+
+use Core\Database;
+
 require_once '../Core/functions.php';
 require_once '../Core/Database/Database.php';
 
