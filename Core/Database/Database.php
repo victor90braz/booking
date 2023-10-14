@@ -1,5 +1,7 @@
 <?php
 
+
+
   class Database {
     private $connection;
     public $config;
@@ -9,22 +11,27 @@
       $this->config = $config;
 
         try {
-            $this->connection = new PDO(
-                "mysql:host={$config['host']};port={$config['port']};dbname={$config['dbname']};charset={$config['charset']}",
-                'root',
-                ''
-            );
-
-            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            // Handle database connection error
-            echo "Connection failed: " . $e->getMessage();
+            $this->resolve($config);
+        } catch (PDOException $error) {
+            echo "Connection failed: " . $error->getMessage();
         }
     }
 
-    public function getNotes() {
+    public function resolve($config) {
+        $this->connection = new PDO(
+            "mysql:host={$config['host']};port={$config['port']};dbname={$config['dbname']};charset={$config['charset']}",
+            'root',
+            ''
+        );
+
+        $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        return $this;
+    }
+
+    public function query($query) {
         try {
-            $stmt = $this->connection->query('SELECT * FROM notes');
+            $stmt = $this->connection->query($query);
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             // Handle query error

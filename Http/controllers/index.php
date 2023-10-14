@@ -8,7 +8,7 @@ $greeting = "Booking Flats";
 
 $database = new Database($config['database']);
 
-$notes = $database->getNotes();
+$notes = $database->query('SELECT * FROM notes');
 
 require_once basePath('/views/index.view.php');
 ?>
