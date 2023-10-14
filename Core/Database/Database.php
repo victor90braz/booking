@@ -10,7 +10,7 @@
 
         public function __construct($config) {
 
-        $this->config = $config;
+            $this->config = $config;
 
             try {
                 $this->resolve($config);
@@ -36,7 +36,6 @@
                 $stmt = $this->connection->query($query);
                 return $stmt->fetchAll(PDO::FETCH_ASSOC);
             } catch (PDOException $e) {
-                // Handle query error
                 echo "Error: " . $e->getMessage();
                 return [];
             }
