@@ -1,49 +1,38 @@
 <?php
 
-    namespace Core;
-    use PDO;
-    use PDOException;
+namespace Core\Database;
+use PDO;
+use PDOException;
 
-    class Database {
-        private $connection;
-        public $config;
+// Interface for database operations
+interface DatabaseInterface {
+    public function query($query);
+}
 
-        public function __construct($config) {
+// Database class implementing the DatabaseInterface
+class Database implements DatabaseInterface {
+    private $connection;
+    public $config;
 
-            $this->config = $config;
+    public function __construct($config) {
+        $this->config = $config;
+        $this->resolve($config);
+    }
 
-            try {
+    private function resolve($config) {
+        $dsn = "mysql:host={$config['host']};port={$config['port']};dbname={$config['dbname']};charset={$config['charset']}";
+        $username = $config['username'];
+        $password = $config['password'];
+        $this->connection = new PDO($dsn, $username, $password);
+    }
 
-                $this->resolve($config);
-
-            } catch (PDOException $error) {
-
-                echo "Connection failed: " . $error->getMessage();
-            }
-        }
-
-        public function resolve($config) {
-
-            $this->connection = new PDO(
-                "mysql:host={$config['host']};port={$config['port']};dbname={$config['dbname']};charset={$config['charset']}",
-                'root',
-                ''
-            );
-        }
-
-        public function query($query) {
-
-            try {
-
-                $statement = $this->connection->query($query);
-
-                return $statement->fetchAll(PDO::FETCH_ASSOC);
-
-            } catch (PDOException $error) {
-
-                echo "Error: " . $error->getMessage();
-
-                return [];
-            }
+    public function query($query) {
+        try {
+            $statement = $this->connection->query($query);
+            return $statement->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $error) {
+            echo "Error: " . $error->getMessage();
+            return [];
         }
     }
+}

@@ -2,10 +2,10 @@
 
 <h1><?= $title ?></h1>
 
-<ul>
-    <?php foreach ($notes as $note) : ?>
-        <li><?= $note['body']; ?></li>
-    <?php endforeach; ?>
-</ul>
+<?php foreach ($notes as $note): ?>
+    <div>
+        <?php echo $note->getBody(); ?>
+    </div>
+<?php endforeach; ?>
 
 <?php require_once basePath("/views/partials/footer.php") ?>

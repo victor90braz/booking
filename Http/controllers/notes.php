@@ -1,28 +1,46 @@
 <?php
-use Core\Database;
+
+use Core\Database\Database;
+use Core\Database\DatabaseInterface;
+
 require_once '../Core/functions.php';
 require_once '../Core/Database/Database.php';
-$config = require_once basePath('/config.php');
-class Notes {
-  private $config;
 
-  public function __construct($config) {
-      $this->config = $config;
-  }
+class Note {
+    private $body;
 
-  public function title($text) {
-      return $text;
-  }
+    public function __construct($body) {
+        $this->body = $body;
+    }
 
-  public function fetch() {
-      return (new Database($this->config['database']))->query('SELECT * FROM notes');
-  }
+    public function getBody() {
+        return $this->body;
+    }
 }
 
-$notesManager = new Notes($config);
-$title = $notesManager->title("Booking Flats");
-$notes = $notesManager->fetch();
+class NotesManager {
+    private $database;
 
-require_once basePath('/views/index.view.php');
-?>
+    public function __construct(DatabaseInterface $database) {
+        $this->database = $database;
+    }
 
+    public function getNotes() {
+        $notesData = $this->database->query('SELECT * FROM notes');
+        $notes = [];
+
+        foreach ($notesData as $noteData) {
+            $notes[] = new Note($noteData['body']);
+        }
+
+        return $notes;
+    }
+}
+
+$config = require_once basePath('/config.php');
+$database = new Database($config['database']);
+$notesManager = new NotesManager($database);
+$title = "Booking Flats";
+$notes = $notesManager->getNotes();
+
+require_once basePath("/views/index.view.php");
