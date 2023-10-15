@@ -1,10 +1,8 @@
 <?php
 use Core\Database;
-
 require_once '../Core/functions.php';
 require_once '../Core/Database/Database.php';
 $config = require_once basePath('/config.php');
-
 class Notes {
   private $config;
 
@@ -21,9 +19,7 @@ class Notes {
   }
 }
 
-
 $notesManager = new Notes($config);
-
 $title = $notesManager->title("Booking Flats");
 $notes = $notesManager->fetch();
 
