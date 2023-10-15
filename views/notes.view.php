@@ -4,7 +4,7 @@
 
 <?php foreach ($notes as $note): ?>
     <div>
-        <?php echo $note->getBody(); ?>
+        <?= $note->getBody(); ?>
     </div>
 <?php endforeach; ?>
 
