@@ -19,9 +19,8 @@ class Database implements DatabaseInterface {
 
     private function resolve($config) {
         $dsn = "mysql:host={$config['host']};port={$config['port']};dbname={$config['dbname']};charset={$config['charset']}";
-        $username = $config['username'];
-        $password = $config['password'];
-        $this->connection = new PDO($dsn, $username, $password);
+
+        $this->connection = new PDO($dsn, $config['username'], $config['password']);
     }
 
     public function query($query) {
