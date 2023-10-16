@@ -4,12 +4,10 @@ namespace Core\Database;
 use PDO;
 use PDOException;
 
-// Interface for database operations
 interface DatabaseInterface {
     public function query($query);
 }
 
-// Database class implementing the DatabaseInterface
 class Database implements DatabaseInterface {
     private $connection;
     public $config;
