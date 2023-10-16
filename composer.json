@@ -11,7 +11,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Braz9\\Booking\\": "src/"
+      "Core\\": "Core/",
+      "Http\\": "Http/"
     }
   },
   "require-dev": {
